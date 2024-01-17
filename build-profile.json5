@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\QQQ\\.ohos\\config\\auto_debug_MyApplication3_com.example.myapplication_2850086000476655797.cer",
-          "storePassword": "0000001B3D48DF35454763CFD3116A722F55A41D99D017E8F303C7C0C071B14E01454EA2CB030E5AE86845",
+          "certpath": "C:\\Users\\97205\\.ohos\\config\\auto_debug_HongMeng_com.example.myapplication_2850086000476655797.cer",
+          "storePassword": "0000001ABD74486B27AF555852CBD8DD562D8A06B0159A991FAF3D20F2AD63794AA679846685191B0048",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B092835264EFE79AD16F7DA721FC1BE2895E3BAA06CA7D380C85635A3A637711F21E5C5B465AE81",
-          "profile": "C:\\Users\\QQQ\\.ohos\\config\\auto_debug_MyApplication3_com.example.myapplication_2850086000476655797.p7b",
+          "keyPassword": "0000001A1F299FCF6DA651D3A1DA611D9208AD3420986FA2C5651B769E86B0693EED5F0F10CB373AA04F",
+          "profile": "C:\\Users\\97205\\.ohos\\config\\auto_debug_HongMeng_com.example.myapplication_2850086000476655797.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\QQQ\\.ohos\\config\\auto_debug_MyApplication3_com.example.myapplication_2850086000476655797.p12"
+          "storeFile": "C:\\Users\\97205\\.ohos\\config\\auto_debug_HongMeng_com.example.myapplication_2850086000476655797.p12"
         }
       }
     ],

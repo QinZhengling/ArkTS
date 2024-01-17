@@ -10,6 +10,8 @@ struct Index {
 
   }
 
+
+
   build() {
 
     Column() {
@@ -18,7 +20,7 @@ struct Index {
         Text('Login').fontColor('#fff').fontSize(48).fontWeight(600).offset({ x: -100, y: -100 });
         Circle({ width: 30, height: 30 }).fill('#FFB133').offset({ x: -170, y: -64 });
         Circle({ width: 70, height: 70 }).fill('#FFB133').offset({ x: -120, y: -50 });
-      }.width('100%')
+      }.width('100%').height('40%')
 
       Column() {
         Column() {
@@ -77,13 +79,19 @@ struct Index {
           Text('注册！').fontSize(12).fontWeight(400).fontColor('#F9A826').onClick(() => {
             router.pushUrl({
               url: 'pages/Register',
-            })
-              .then(() => {
-                // success
-              })
-              .catch(err => {
+              params: {
+                data1: 'message',
+                data2: {
+                  data3: [123, 456, 789]
+                }
+              }
+            }, router.RouterMode.Single, (err) => {
+              if (err) {
                 console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
-              })
+                return;
+              }
+              console.info('pushUrl success');
+            });
           })
         }.margin(20)
 
@@ -100,11 +108,9 @@ struct Index {
         }.width('20%').justifyContent(FlexAlign.SpaceAround).margin(20)
       }
       .width('100%')
-      .height('100%')
+      .height('60%')
       .borderRadius({ topLeft: 20, topRight: 20 })
       .backgroundColor('#FFFFFF')
-      .offset({ y: -80 })
-
     }
     .width('100%')
     .height('100%')
