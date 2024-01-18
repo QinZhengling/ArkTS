@@ -11,7 +11,7 @@ struct register {
     Column() {
       Column() {
         Circle({ width: 250, height: 250 }).fill('#FFB133').offset({ x: -110, y: -40 });
-        Text('Register').fontColor('#fff').fontSize(44).fontWeight(600).offset({ x: -70, y: -100 });
+        Text('Register').fontColor('#fff').fontSize(44).fontWeight(600).offset({ x: '-20%', y: -100 });
         Circle({ width: 30, height: 30 }).fill('#FFB133').offset({ x: 170, y: -64 });
         Circle({ width: 70, height: 70 }).fill('#FFB133').offset({ x: 120, y: -50 });
       }.width('100%')
@@ -122,11 +122,23 @@ struct register {
       }
       .width('100%')
       .height('60%')
+      .shadow({ radius: 28, offsetX: 0, offsetY: 2, color: "#60414040" })
       .borderRadius({ topLeft: 20, topRight: 20 })
       .backgroundColor('#FFFFFF')
     }.width('100%')
     .height('100%')
 
     .backgroundColor('#F9A825')
+  }
+
+  pageTransition() {
+    PageTransitionEnter({ type: RouteType.Push, duration: 500, curve: Curve.Linear })
+      .onEnter((type: RouteType, progress: number) => {
+      })
+      .slide(SlideEffect.Right)
+    // 进场过程中会逐帧触发onEnter回调，入参为动效的归一化进度(0% -- 100%)
+    PageTransitionExit({ type: RouteType.Pop, duration: 500, curve: Curve.Linear })
+      .onExit((type: RouteType, progress: number) => {
+      }).slide(SlideEffect.Right) // 退场过程中会逐帧触发onExit回调，入参为动效的归一化进度(0% -- 100%)
   }
 }

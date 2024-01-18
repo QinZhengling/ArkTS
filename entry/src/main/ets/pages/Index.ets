@@ -6,18 +6,16 @@ struct Index {
   @State message: string = 'Hello World'
   @State i_width: number = 150
 
-  aboutToAppear() {
+  onPageShow() {
 
   }
-
-
 
   build() {
 
     Column() {
       Column() {
         Circle({ width: 250, height: 250 }).fill('#FFB133').offset({ x: 110, y: -40 });
-        Text('Login').fontColor('#fff').fontSize(48).fontWeight(600).offset({ x: -100, y: -100 });
+        Text('Login').fontColor('#fff').fontSize(48).fontWeight(600).offset({ x: '-25%', y: -100 });
         Circle({ width: 30, height: 30 }).fill('#FFB133').offset({ x: -170, y: -64 });
         Circle({ width: 70, height: 70 }).fill('#FFB133').offset({ x: -120, y: -50 });
       }.width('100%').height('40%')
@@ -109,12 +107,24 @@ struct Index {
       }
       .width('100%')
       .height('60%')
+      .shadow({ radius: 28, offsetX: 0, offsetY: 2, color: "#60414040" })
       .borderRadius({ topLeft: 20, topRight: 20 })
       .backgroundColor('#FFFFFF')
     }
     .width('100%')
     .height('100%')
-
+    .shadow({ radius: 28, offsetX: 0, offsetY: 2, color: "#60414040" })
     .backgroundColor('#F9A825')
+  }
+
+  pageTransition() {
+    PageTransitionEnter({ type: RouteType.Pop, duration: 500, curve: Curve.Linear })
+      .onEnter((type: RouteType, progress: number) => {
+      })
+      .translate({ y: '20%' })
+    // 进场过程中会逐帧触发onEnter回调，入参为动效的归一化进度(0% -- 100%)
+    PageTransitionExit({ type: RouteType.Push, duration: 800, curve: Curve.Linear })
+      .onExit((type: RouteType, progress: number) => {
+      }).translate({ y: '20%' }) // 退场过程中会逐帧触发onExit回调，入参为动效的归一化进度(0% -- 100%)
   }
 }
